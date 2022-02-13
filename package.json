@@ -1,0 +1,46 @@
+{
+  "name": "sveltepress",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "node scripts/generateProdData.js && svelte-kit dev",
+    "build": "node scripts/generateProdData.js && svelte-kit build",
+    "preview": "svelte-kit preview",
+    "postinstall": "ni svelte -D --ignore-scripts && node scripts/generateSymlinks.js",
+    "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+    "format": "prettier --write --plugin-search-dir=. .",
+    "preinstall": "node scripts/prepareTheme.js"
+  },
+  "devDependencies": {
+    "@antfu/ni": "0.12.0",
+    "@carbon/themes": "10.50.0",
+    "@sveltejs/adapter-netlify": "1.0.0-next.45",
+    "@sveltejs/adapter-node": "1.0.0-next.68",
+    "@sveltejs/adapter-static": "1.0.0-next.28",
+    "@sveltejs/adapter-vercel": "1.0.0-next.43",
+    "@sveltejs/kit": "1.0.0-next.267",
+    "carbon-components": "10.52.0",
+    "carbon-components-svelte": "0.58.2",
+    "carbon-icons-svelte": "10.44.4",
+    "carbon-preprocess-svelte": "0.6.0",
+    "eslint": "8.9.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-svelte3": "3.4.0",
+    "flexsearch": "0.7.21",
+    "front-matter": "4.0.2",
+    "highlight.js": "11.4.0",
+    "jsesc": "3.0.2",
+    "marked": "4.0.12",
+    "prettier": "2.5.1",
+    "prettier-plugin-svelte": "2.6.0",
+    "sass": "1.49.7",
+    "svelte": "^3.46.4",
+    "svelte-preprocess": "4.10.3",
+    "svelte-typewriter": "2.4.5"
+  },
+  "type": "module",
+  "dependencies": {
+    "node": "^16.0.0",
+    "sanitize-html": "2.7.0"
+  },
+  "license": "Unlicense"
+}

@@ -23,7 +23,7 @@
 	};
 
 	// Typewriter
-	let people = ['humans', 'you', 'your relatives', 'everyone'];
+	let skills = ['HTML', 'CSS', 'JavaScript'];
 
 	// Logo animation
 	import { draw } from 'svelte/transition';
@@ -49,7 +49,7 @@
 		<Grid padding class="sp--grid">
 			<Row>
 				<Column style="text-align: center;">
-					<svg
+					<!-- <svg
 						shape-rendering="auto"
 						width="250"
 						height="250"
@@ -76,113 +76,39 @@
 								/>
 							{/if}
 						</g>
-					</svg>
-					<h1 style="margin-top: 1rem">Welcome to SveltePress</h1>
+					</svg> -->
+					<h1 style="margin-top: 1rem">វគ្គសិក្សាបង្កើតគេហទំព័រ</h1>
+					<p style="margin: 1rem 0">
+						បង្រៀនជាភាសាខ្មែរ 🇰🇭
+					</p>
 					<h2 class="subTitle">
-						Documentation for 
 						<Typewriter loop={3000} cursor="#ff3e00">
-							{#each people as person}
-								<span>{person}.</span>
+							{#each skills as skill}
+								<span>{skill}</span>
 							{/each}
 							{' '}
 						</Typewriter>
 					</h2>
 					<Button
 						icon={ArrowRight32}
-						size="lg"
 						href={nav.length > 0 ? nav[0].link : $session.get('navbar')[0]?.link}
-						style="margin-top: 3rem">Let's get started</Button
-					>
+						style="margin-top: 3rem">
+						<span style="font-size: 1.24rem; margin-right: -20px">
+							បាប់ផ្តើមរៀន
+						</span>
+					</Button>
 				</Column>
-			</Row>
-		</Grid>
-		<Grid padding condensed>
-			<Row class="sp--header--tiles">
-				<Column md sm={breakpoints.sm}>
-					<Tile class="sp--tile">
-						<h2 class="tile--title">Powered by SvelteKit</h2>
-						<h4>
-							SveltePress is built on top of SvelteKit, a powerful web framework, while taking
-							advantage of Svelte's incredible performance and simplicity.
-						</h4>
-					</Tile>
-				</Column>
-				<Column md sm={breakpoints.sm}>
-					<Tile class="sp--tile"
-						><h2 class="tile--title">Made for humans</h2>
-						<h4>
-							Markdown files are structured according to the filesystem, shrinking the gap between
-							File Manager and content creator.
-						</h4></Tile
-					>
-				</Column>
-				<Column md sm={breakpoints.sm}>
-					<Tile class="sp--tile"
-						><h2 class="tile--title">Customizability</h2>
-						<h4>
-							Replacable themes, markdown converters, components, pages, functions... SveltePress
-							was made for you.
-						</h4></Tile
-					>
-				</Column>
-			</Row>
-			<Row class="sp--arrow--down">
-				<ArrowDown32 />
 			</Row>
 		</Grid>
 	</div>
-	<Grid padding class="sp--grid sp--features">
-		<Row class="sp--feature">
-			<Column md sm={12}>
-				<img
-					src="https://i.imgur.com/KidDqUy.png"
-					alt="a terminal showing the output of the tree command, output includes a file structure of markdown files and SveltePress sidebar generated using the previous structure"
-				/>
-			</Column>
-			<Column class="sp--feature--card" md sm={12}
-				><Tile class="sp--tile"
-					><h2 class="tile--title">Filesystem based Structure</h2>
-					<h4>Folders become categories, files become posts. Simple as that.</h4></Tile
-				></Column
-			>
-		</Row>
-		<Row class="sp--feature" style="flex-wrap: wrap-reverse;">
-			<Column class="sp--feature--card" md sm={12}
-				><Tile class="sp--tile"
-					><h2 class="tile--title">Themable</h2>
-					<h4>
-						With a theming API with almost zero restrictions, you can modify everything to fit your
-						needs.
-					</h4></Tile
-				></Column
-			>
-			<Column md sm={12}>
-				<img
-					src="https://i.imgur.com/SG5iPrc.png"
-					alt="the cakepop official theme in front of the carbon one"
-				/>
-			</Column>
-		</Row>
-		<Row class="sp--feature">
-			<Column md sm={12}>
-				<img
-					src="https://i.imgur.com/YCuLvMP.png"
-					alt="screenshots of multiple guis of sveltepress (gtk, qt, flutter (desktop & mobile)"
-				/>
-			</Column>
-			<Column class="sp--feature--card" md sm={12}
-				><Tile class="sp--tile"
-					><h2 class="tile--title">Compile to native</h2>
-					<h4>
-						Desktop, Mobile, e-books & more. With the power of Flutter, GTK, QT & Pandoc you can
-						target Web, Linux, MacOS, Windows, Android, iOS, .epub, .pdf, .docx & a whole lot more
-						from one codebase.
-					</h4></Tile
-				></Column
-			>
-		</Row>
-	</Grid>
 	<footer>
+		<p>
+			គេហទំព័រវគ្គសិក្សានេះបង្កើតឡើងដោយប្រើប្រាស់ 
+			<a 
+			class="sp--link"
+			href="https://sveltepress.geopjr.dev/">SveltePress</a>
+		</p>	
+
 		<span class="pd" /> 2021{currentYear === 2021 ? '' : ' - ' + currentYear} -
 		<a class="sp--link" href="https://geopjr.dev/">GeopJr</a>
 	</footer>
@@ -207,23 +133,6 @@
 
 	:global(.sp--grid) {
 		margin-bottom: 1rem !important;
-	}
-
-	:global(.sp--features) {
-		height: 100%;
-		width: 100%;
-		:global(.sp--feature) {
-			align-items: center;
-			text-align: center;
-			justify-content: center;
-
-			:global(.sp--feature--card) {
-				text-align: left;
-			}
-			img {
-				max-width: 100%;
-			}
-		}
 	}
 
 	:global(.sp--tile) {
@@ -265,29 +174,10 @@
 		margin-top: 1rem;
 	}
 
-	.tile--title {
-		margin-bottom: 1rem;
-	}
-
 	footer {
 		font-weight: bold;
 		text-align: center;
 		padding: 0 2rem 2rem;
-	}
-
-	path {
-		stroke: black;
-		fill: white;
-		transition: 1.5s;
-		stroke-width: 15;
-	}
-	path.filled-1 {
-		stroke: unset;
-		fill: #ffd0bf;
-	}
-	path.filled-2 {
-		stroke: unset;
-		fill: #ff3e00;
 	}
 
 	/* md */

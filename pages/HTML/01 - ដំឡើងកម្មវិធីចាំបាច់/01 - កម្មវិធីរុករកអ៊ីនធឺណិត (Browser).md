@@ -5,4 +5,4 @@ postName: កម្មវិធីរុករកអ៊ីនធឺណិត (br
 
 ក្នុងការជ្រើសកម្មវិធីរុករកអ៊ីនធឺណិត (browser) ជម្រើសផ្ទាល់ខ្លួនរបស់ខ្ញុំគឺ [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/)​ ប៉ុន្តែអ្នកអាចប្រើប្រាស់ browser ដែលអ្នកកំពុងប្រើរាល់ថ្ងៃដូចជា Chrome ឬ Edge បានដោយគ្មានការព្រួយបារម្ភ​ព្រោះប្រធានបទនិងអ្វីដែលយើងនឹងរៀនមិនអាស្រ័យទៅលើជម្រើស browser អ្នកឡើយ។
 
-![Logos of major browsers](compare-browsers.png)
+![Logos of major browsers](/images/compare-browsers.png)
